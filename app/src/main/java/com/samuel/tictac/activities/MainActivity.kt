@@ -34,7 +34,16 @@ class MainActivity : DaggerAppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        initAd()
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
+                as NavHostFragment
+        navController = navHostFragment.navController
+        appBarConfiguration = AppBarConfiguration(navController.graph)
 
+        checkLastGameState()
+    }
+
+    private fun initAd() {
         MobileAds.initialize(this) {}
         val mId = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
         val configuration =
@@ -43,13 +52,6 @@ class MainActivity : DaggerAppCompatActivity() {
 
         val adReq = AdRequest.Builder().build()
         binding.adView.loadAd(adReq)
-
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment)
-                as NavHostFragment
-        navController = navHostFragment.navController
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-
-        checkLastGameState()
     }
 
     private fun checkLastGameState() {
