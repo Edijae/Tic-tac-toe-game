@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tictac</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">Main Fragment</string>
+    <string name="second_fragment_label">Game Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+</resources>

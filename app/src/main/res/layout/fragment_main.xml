@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.MainFragment"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <Button
+        style="@style/buttonsStyle"
+        android:text="Start as X"
+        android:id="@+id/startX"
+
+        />
+
+    <Button
+        style="@style/buttonsStyle"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:text="Start as O"
+        android:id="@+id/startO" />
+
+</LinearLayout>
