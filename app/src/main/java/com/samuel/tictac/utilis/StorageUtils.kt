@@ -1,16 +1,15 @@
 package com.samuel.tictac.utilis
 
 import android.content.Context
-import android.util.Log
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.samuel.tictac.models.Move
 
 class StorageUtils {
     companion object {
-        private val PREF_NAME = "tictac"
-        private val PLAYER = "player"
-        private val MOVES = "moves"
+        private const val PREF_NAME = "tictac"
+        private const val PLAYER = "player"
+        private const val MOVES = "moves"
         private val gson = Gson()
         private val type = object : TypeToken<Array<Move?>>() {}.type
 
@@ -30,7 +29,6 @@ class StorageUtils {
         fun getMoves(context: Context): Array<Move?> {
             val json = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
                 .getString(MOVES, "")!!
-            Log.e("TAG", "getMoves: json $json")
             return if (json.isEmpty()) {
                 Array(9) { null }
             } else {

@@ -13,7 +13,7 @@ class MainViewModel @Inject constructor() : ViewModel() {
     var restored = false
 
     fun resetData() {
-        moves = Array<Move?>(9) { null }
+        moves = Array(9) { null }
         restored = false
     }
 }
